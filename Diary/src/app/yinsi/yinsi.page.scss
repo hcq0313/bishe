@@ -1,0 +1,22 @@
+h5{
+    margin-top: -5px;
+    text-align: center;
+}
+p{
+    font-size: 14px;
+}
+ion-header{
+    ion-toolbar{
+      --background: url("../../assets/img/img13.jpg") center/ cover no-repeat;
+    }
+  }
+  ion-back-button{
+    color: white;
+  }
+  .button-inner.sc-ion-back-button-ios {
+    color: white!important;
+  }
+  ion-title{
+    font-family:"SimSun";
+    color: rgb(65, 63, 63);
+}

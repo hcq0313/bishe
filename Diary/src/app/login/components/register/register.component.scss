@@ -1,0 +1,33 @@
+.input-wrapper{
+    background-color: powderblue;
+} 
+#btn_login{
+    width: 96%;
+    margin: auto;
+    margin-left: 2%;
+}
+
+.icons{
+    color: powderblue;
+}
+.span1{
+    color: grey;
+    font-size: 12px;
+}
+.span2{
+    color: grey;
+    font-size: 12px;
+}
+.span3{
+    color: blue;
+    font-size: 12px;
+}
+#iclose{
+    z-index: 100;
+    position:fixed;
+    font-size: 2rem;
+    color: white;
+}
+ion-img{
+    z-index: -10;
+}

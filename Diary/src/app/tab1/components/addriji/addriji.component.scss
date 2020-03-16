@@ -1,0 +1,72 @@
+#title1{
+    margin-left: 20px;
+}
+#text{
+    text-decoration: none;
+    // margin-right: 20px;
+
+}
+// #cambtn{
+//     margin-top: 100px;
+//     margin-left: 100px;
+// }
+#camera{
+    display: block;
+    // background-color: greenyellow;
+    color: gray;
+    // margin-top: -29px;
+    // margin-left: 300px;
+    font-size: 2rem;
+}
+#weather{
+    span{
+        float: left;
+        line-height: 36px;
+        color: grey;
+        display: block;
+        text-align: center;
+        margin-top: 3px;
+        ion-icon{
+        float: left;
+        margin-top: 8px;
+        }
+    }
+    ion-select{
+        float: left;
+    }
+}
+#fenlei{
+    span{
+        float: left;
+        line-height: 36px;
+        color: grey;
+        display: block;
+        text-align: center;
+        margin-top: 3px;
+        ion-icon{
+        float: left;
+        margin-top: 8px;
+        }
+    }
+    ion-select{
+        float: left;
+    }
+}
+
+#quanxian{
+    span{
+        float: left;
+        line-height: 36px;
+        color: grey;
+        display: block;
+        text-align: center;
+        margin-top: 3px;
+        ion-icon{
+        float: left;
+        margin-top: 8px;
+        }
+    }
+    ion-select{
+        float: left;
+    }
+}

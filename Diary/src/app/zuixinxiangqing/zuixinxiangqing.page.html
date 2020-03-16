@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab3"></ion-back-button>
+    </ion-buttons>
+    <ion-title>最新</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollY]="false">
+<div id="box">
+  <div id="top">
+
+    <div id="top2">
+      <span id="month">{{month}}月</span><br>
+      <span id="week">{{week}}</span>
+    </div>
+    <span id="top1">
+      {{day}}
+    </span>
+  </div>
+  <br>
+  <div id="text">
+    <span style="font-size: 20px;">{{title}}&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+    
+    <span style="color: lightslategray;">
+      <ion-icon id="icon1" name="cafe" style="color: rgb(196, 77, 77); font-size: 1.2rem;"></ion-icon>
+      ({{fenlei}})&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    
+    <span style="color:orange;">&nbsp;&nbsp;{{weather}}
+      <ion-icon id="icon1" name="leaf" style="color: rgb(243, 181, 126); font-size: 1.2rem;"></ion-icon>
+    </span>
+  </div>
+  <br>
+  <div id="text2">
+    <p>{{text}}</p>
+  </div>
+</div>
+
+<div>
+  <ion-fab
+    vertical="top"
+    horizontal="end"
+    slot="fixed"
+    (click)="showModel()"
+    style="position: fixed;top:82%;left:77%;"
+  >
+    <ion-fab-button id="addbutton" size="small">
+      <ion-icon name="brush"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>
+</ion-content>

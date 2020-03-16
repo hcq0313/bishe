@@ -1,0 +1,18 @@
+ion-header{
+    ion-toolbar{
+      --background: url("../../assets/img/img13.jpg") center/ cover no-repeat;
+    }
+  }
+  ion-title{
+    font-family:"SimSun";
+    color: rgb(65, 63, 63);
+    font-size: 18px;
+}
+ion-content{
+    // --background: url("../../assets/img/img3.jpg") center/ cover no-repeat;
+    // opacity:0.9;
+    --background: rgb(247, 247, 223);
+}
+ion-button{
+    color: black;
+}

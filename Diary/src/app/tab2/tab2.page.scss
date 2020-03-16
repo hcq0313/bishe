@@ -1,0 +1,111 @@
+ion-header{
+    ion-toolbar{
+      --background: url("../../assets/img/img13.jpg") center/ cover no-repeat;
+    }
+  }
+  ion-title{
+    font-family:"SimSun";
+    color: rgb(65, 63, 63);
+    font-size: 18px;
+}
+ion-content {
+    // --background: honeydew;
+    // --background: #f4f5f8;
+    --background: rgb(247, 247, 247);
+}
+#div{
+    width: 92%;
+    height: 14%;
+    display: block;
+    margin: auto;
+    margin-top: 13px;
+    margin-bottom: 10px;
+
+}
+#box{
+    float: left;
+}
+#div2,#div3,#div4{
+    float: left;
+    // margin-left: 28px;
+}
+#div2{
+    margin-top: 4px;
+    width: 33.3%;
+    ion-button{
+        width: 57px;
+        height: 40px;
+        display: block;
+        margin: auto;
+        border-radius: 30%;
+    }
+}
+#div3{
+    margin-top: 4px;
+    // background-color: greenyellow;
+    width: 33.3%;
+    ion-button{
+        width: 57px;
+        height: 40px;
+        display: block;
+        margin: auto;
+
+    }
+}
+#div4{
+    margin-top: 4px;
+    // background-color: rgb(241, 30, 241);
+    width: 33.3%;
+    ion-button{
+        width: 57px;
+        height: 40px;
+        display: block;
+        margin: auto;
+
+    }
+
+}
+span{
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 13px;
+}
+
+#article{
+    
+    border: solid 1px rgb(113, 113, 243);
+    width: 96%;
+    display: block;
+    margin: auto;
+    height: auto;
+    // padding: 5px;
+    border-radius: 7px;
+    margin-top: 3px;
+    padding-left: 7px;
+    padding-right: 3px;
+}
+
+#story{
+    width: 96%;
+    color: royalblue;
+    font-size: 13px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+h6{
+    margin-top: 8px;
+}
+#author{
+    margin-top: -4px;
+}
+#text1{
+    display: block;
+    // background-color: yellow;
+    font-size: 14px;
+    margin-top: -8px;
+}
+#time{
+    margin-top: -10px;
+}

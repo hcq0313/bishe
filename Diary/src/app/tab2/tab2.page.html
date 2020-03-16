@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <!-- <span class="titletime">{{nowDay}}月{{nowDay2}}日</span> -->
+    <!-- <ion-icon slot="icon-only" name="brush" end></ion-icon> -->
+    <ion-title>推荐</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  <!-- 轮播图 -->
+<ion-slides mode="ios" pager="true" [options]="slideOpts" #slide >
+  <ion-slide>
+    <ion-img src="../../assets/img/s001.jpg"></ion-img>
+  </ion-slide>
+  <ion-slide>
+    <ion-img src="../../assets/img/s003.jpg"></ion-img>
+  </ion-slide>
+  <ion-slide>
+    <ion-img src="../../assets/img/s007.jpg"></ion-img>
+  </ion-slide>
+  <ion-slide>
+    <ion-img src="../../assets/img/s006.jpg"></ion-img>
+  </ion-slide>
+  <ion-slide>
+    <ion-img src="../../assets/img/s005.jpg"></ion-img>
+  </ion-slide>
+  <ion-slide>
+    <ion-img src="../../assets/img/s004.jpg"></ion-img>
+  </ion-slide>
+</ion-slides>
+
+  <div id="div">
+    <div id="div1">
+      <div id="div2">
+          <ion-button id="btn1" color="tertiary" [routerLink]="['/shiguangshuo']">
+            <ion-icon slot="icon-only" name="leaf"></ion-icon>
+          </ion-button>
+        <span [routerLink]="['/shiguangshuo']">时光说</span>
+      </div>
+      <!-- <ion-icon name="briefcase-outline"></ion-icon> -->
+      <div id="div3">
+        <ion-button id="btn2" color="primary" [routerLink]="['/wodeshoucang']">
+          <ion-icon slot="icon-only" name="heart"></ion-icon>
+        </ion-button>
+        <span [routerLink]="['/wodeshoucang']">我的收藏</span>
+      </div>
+
+      <div id="div4">
+        <ion-button id="btn3" color="secondary" [routerLink]="['/meiriyiju']">
+          <ion-icon name="cafe"></ion-icon>
+        </ion-button>
+        <span [routerLink]="['/meiriyiju']">每日一句</span>
+      </div>
+    </div>    
+  </div>
+
+<p id="story">-STORY-</p>
+  <div id="article" [routerLink]="['/story']">
+    <h6 style="line-height: 19px; ">没有赏味期限，只有来日方长</h6>
+    <p style="font-size: small; color: grey; " id="author">文/周源远</p>
+    <p id="text1">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      爱一个人的时候，才会学会理解和包容。愿意为对方削去身上的棱角，然后打磨成圆。
+      或许美子有一天知道大白不喜欢抽烟的女孩儿，就会慢慢戒掉，哪怕从一天两包到一天一包，也是值得歌颂的。
+
+    </p>
+    <p style="font-size: 12px; color: grey;" id="time">2020/03/13</p>
+  </div>
+
+</ion-content>

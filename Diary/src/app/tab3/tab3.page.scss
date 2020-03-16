@@ -1,0 +1,84 @@
+ion-header{
+    ion-toolbar{
+      --background: url("../../assets/img/img13.jpg") center/ cover no-repeat;
+      height: 45px;
+      ion-segment{
+          margin-top: 5px;
+      }
+    }
+    
+  }
+
+  ion-segment{
+      color: seagreen;
+      ion-segment-button{
+          color: sienna;
+          ion-label{
+              color: whitesmoke;
+          }
+      }
+  }
+ion-content {
+    // --background: rgb(238, 240, 240);
+    --background: url("../../assets/img/img9.jpg") center/ cover no-repeat;
+    // position: absolute;
+}
+#diary{
+    padding: 5px;
+    width: 94%;
+    margin-left: 3%;
+    height: 120px;
+    display: block;
+    margin-top: 10px;
+    background-color: white;
+    opacity:0.85;
+    // position: absolute;
+    border: 1px solid rgb(214, 212, 212);
+    border-radius: 4px;
+}
+#tubiao{
+    width: 30px;
+    height: 20px;
+    display: block;
+    // margin-bottom: -10px;
+    // background-color: blue;
+    position: relative;
+    float: right;
+    font-size: 18px;
+    ion-icon{
+        color: lightslategray;
+    }
+
+}
+#text{
+    // background-color: chartreuse;
+    height: 55px;
+    p{
+        opacity:1;
+    }
+    
+}
+#top{
+    ion-avatar{
+        width: 30px;
+        height: 30px;
+        float: left;
+    }
+    #span1{
+        // background-color: coral;
+        display: block;
+        width: 180px;
+        float: left;
+        margin-top: 3px;
+        // margin-left: 1px;
+        margin-left: 5px;
+    }
+    #span2{
+        // background-color: rgb(192, 147, 130);
+        display: block;
+        width: 44px;
+        float: right;
+        font-size: 13px;
+    }
+
+}

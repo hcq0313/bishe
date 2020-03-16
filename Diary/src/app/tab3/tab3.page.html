@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tab" style="height: 30px;">
+      <ion-segment-button value="tab1" (click)="newlist()">
+        <ion-label>最新</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="tab2" (click)="hotlist()">
+        <ion-label>最热</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="tab3" (click)="mylist()">
+        <ion-label>我的</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="info" [ngSwitch]="tab">
+    <div *ngSwitchCase="'tab1'">
+      <div *ngFor="let item of diaryList" id="diary" (click)="goXiangqing1(item)">
+        <div id="top">
+          <ion-avatar>
+            <img src={{item.image}} alt="">
+          </ion-avatar>
+          <span id="span1">{{item.nicheng}}</span>&nbsp;&nbsp;<span id="span2">{{item.month}}-{{item.day}}</span>
+        </div>
+        <div id="text">
+          <p>{{item.text}}</p>
+        </div>
+        <div id="tubiao">
+          <ion-icon name="heart"></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'tab2'" >
+     
+    </div>
+
+    <div *ngSwitchCase="'tab3'">
+      <div *ngFor="let item of myDiary;" id="diary" (click)="goXiangqing3(item)">
+        <div id="top">
+          <ion-avatar>
+            <img src={{item.image}} alt="">
+          </ion-avatar>
+          <span id="span1">{{item.nicheng}}</span>&nbsp;&nbsp;<span id="span2">{{item.month}}-{{item.day}}</span>
+        </div>
+        <div id="text">
+          <p>{{item.text}}</p>
+        </div>
+        <div id="tubiao">
+          <ion-icon name="heart"></ion-icon>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  
+</ion-content>

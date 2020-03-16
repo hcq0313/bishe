@@ -1,0 +1,63 @@
+<ion-content>
+  <div id="top" >
+    <ion-avatar id="touxiang">
+      <img src={{image}}  id="img1">
+    </ion-avatar>
+    <p id="name">{{nicheng}}</p>
+  </div>
+
+<div id="bottom2">
+  <ion-list lines="full" class="list1">
+    <ion-item [routerLink]="['/wodeziliao']">
+      <ion-icon slot="start" name="ice-cream" color="tertiary"></ion-icon>
+      <ion-label style="color: rgb(75, 73, 73);">编辑我的资料</ion-label>
+    </ion-item>
+  </ion-list>
+</div>
+
+<div id="bottom3">
+  <ion-list lines="full" class="list2">
+    <ion-item [routerLink]="['/diary']">
+      <ion-icon slot="start" name="heart" color="danger"></ion-icon>
+      <ion-label style="color: rgb(75, 73, 73);">我的喜欢</ion-label>
+    </ion-item>
+
+    <ion-item [routerLink]="['/diary']">
+      <ion-icon slot="start" name="notifications-outline" color="tertiary"></ion-icon>
+      <ion-label style="color: rgb(75, 73, 73);">消息</ion-label>
+      <!-- <ion-icon name="trash"></ion-icon>回收站 -->
+    </ion-item>
+
+    <ion-item [routerLink]="['/yijian']">
+      <ion-icon slot="start" name="clipboard" color="success"></ion-icon>
+      <ion-label style="color: rgb(75, 73, 73);">意见与反馈</ion-label>
+    </ion-item>
+
+    <ion-item [routerLink]="['/yinsi']">
+      <ion-icon slot="start" name="copy" color="warning"></ion-icon>
+      <ion-label style="color: rgb(75, 73, 73);">隐私声明</ion-label>
+    </ion-item>
+
+    <ion-item [routerLink]="['/guanyuwomen']">
+      <ion-icon slot="start" name="information-circle-outline" color="danger"></ion-icon>
+      <ion-label style="color: rgb(75, 73, 73);">关于我们</ion-label>
+    </ion-item>
+
+    <!-- <ion-item [routerLink]="['/diary']">
+      <ion-icon slot="start" name="settings" color="primary"></ion-icon>
+      <ion-label style="color: rgb(75, 73, 73);">设置</ion-label>
+    </ion-item> -->
+  </ion-list>
+</div>
+
+<div id="bottom4">
+  <ion-button (click)="onClick()" expand="block" shape="round" id="btn" color="light">
+  安全退出
+</ion-button>
+  
+</div>
+
+
+
+
+</ion-content>

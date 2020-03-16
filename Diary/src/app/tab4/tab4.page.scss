@@ -1,0 +1,73 @@
+.list{
+    margin-top: -30px;
+}
+
+ion-content{
+    --background: rgb(235, 235, 233);
+  }
+  #top{
+    z-index: 3;
+    width: 100%;
+    // height: 220px;
+    // background-color:red;
+    // --background: url("../../assets/img/touxiangbj02.jpg") center/ cover no-repeat;
+    background-image: url('../../assets/img/touxiangbg04.jpg');
+    
+     background-repeat: no-repeat; 
+     height: 180px;
+     background-size:100% 200px;
+    display: block;
+    // position: absolute;
+    position: relative;
+     #touxiang{
+        position: absolute;
+        display:block;
+        top: 25%;
+        left: 40%;
+        height: 68px;
+        width: 68px;
+        
+        #img1{
+            display: block;
+        }
+    
+    }
+    #name{
+        position: absolute;
+        width: 100%;
+        // width: 200px;
+        text-align: center;
+        // background-color: rebeccapurple;
+        display: block;
+        margin: auto;
+        margin-top: 120px;
+    }
+}
+
+#bgtouxiang{
+    display: block;
+}
+#bottom2{
+    padding: 8px;
+    ion-list{
+        border-radius: 10px;
+    }
+    
+}
+#bottom3{
+    padding: 8px;
+    margin-top: -38px;
+    ion-list{
+        border-radius: 10px;
+    }
+}
+#bottom4{
+    padding: 8px;
+    margin-top: -38px;
+    ion-list{
+        border-radius: 10px;
+    }
+#btn{
+    color:grey;
+}
+}

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+        <ion-title>意见与反馈</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div style="width: 92%; margin: auto; margin-top: 20px;">
+    <ion-input id="yijian" type="text" placeholder="请输入您的意见" [(ngModel)]="yijian"></ion-input>
+    <br>
+    <ion-input type="text" placeholder="请输入您的联系方式" [(ngModel)]="phone"></ion-input>
+    <br>
+    <ion-button (click)="postShuju()" expand="block" fill="clear" shape="round">
+      提交意见
+    </ion-button>
+  </div>
+</ion-content>

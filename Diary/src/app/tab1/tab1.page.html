@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <span class="titletime">{{nowDay}}月{{nowDay2}}日</span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div id="box">
+    <div>
+      <div id="divtitle">
+        <p id="pp">—&nbsp;&nbsp;{{nowDay3}}年{{nowDay4}}月 &nbsp;(仅自己)&nbsp;&nbsp;—</p>
+      </div>
+
+      <!-- 日记主体部分 -->
+      <div *ngFor="let item of diaryList" id="diary" (click)="goXiangqing(item)">
+        <div id="diary_left">
+          <p>{{item.day}}</p>
+          <div id="spans">
+            <span id="span1">{{item.month}}月</span><span id="span2">/{{item.week}}</span>
+          </div>
+          
+        </div>
+        <div id="diary_right">
+          <ion-label style="margin-bottom: 10px;display: block;">
+            <span style="color: black;">{{item.title}}&nbsp;|&nbsp;</span>      
+            <span style="font-size: small; color:rgb(99, 97, 97);">({{item.fenlei}})</span>
+            
+          </ion-label>
+          <ion-label >
+            <p style="color: rgb(99, 97, 97);">{{item.text}}</p>
+          </ion-label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 添加日记按钮 -->
+
+    <div>
+      <ion-fab
+        vertical="top"
+        horizontal="end"
+        slot="fixed"
+        (click)="showModel()"
+        style="position: fixed;top:86%;left:77%;"
+      >
+        <ion-fab-button id="addbutton" size="small">
+          <ion-icon name="brush"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+        <ion-title>修改资料</ion-title>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width: 92%; margin: auto; margin-top: 20px;">
+    <p>昵称</p>
+    <ion-input type="text" placeholder="请输入昵称" [(ngModel)]="nicheng"></ion-input>
+
+    <p>个性签名：</p>
+    <ion-input type="text" placeholder="请输入个性签名" [(ngModel)]="qianming"></ion-input>
+
+    <ion-button (click)="postShuju()" expand="block" fill="clear" shape="round">
+      确认
+    </ion-button>
+  </div>
+</ion-content>

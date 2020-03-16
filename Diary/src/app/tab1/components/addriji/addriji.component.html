@@ -1,0 +1,77 @@
+<ion-header no-border>
+  <ion-toolbar id="toolbar">
+    <span class="titletime" style="color: grey;">{{ month }}月{{ day }}日</span
+    ><span style="color: grey; font-size: small;">/{{ week }}</span>
+    <ion-buttons slot="start">
+      <ion-button (click)="doClose()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   
+    <ion-buttons slot="end">
+      <ion-button (click)="test()">
+        <ion-icon name="planet" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br>
+  <ion-list>
+    <!-- Input with placeholder -->
+    <ion-input placeholder="标题" id="title1" [(ngModel)]="title"></ion-input>
+
+    <!-- Textarea with custom number of rows and cols -->
+    <ion-item>
+      <ion-textarea
+        rows="7"
+        cols="24"
+        placeholder="请记录下你此刻的心情~" id="text" [(ngModel)]="text"
+      ></ion-textarea>
+    </ion-item>   
+  </ion-list>
+
+
+  <ion-icon name="camera" (click)="choosePicture()" id="camera" style="position: fixed;top:50%;left:87%;"></ion-icon>
+
+      <br>
+      <br>
+      <br>
+<div id="weather">
+      <span>
+        <ion-icon slot="icon-only" name="umbrella" style="color: lightblue; font-size: 20px;"></ion-icon>天气：
+      </span>
+      <ion-select [(ngModel)]="chooseInfo.weather" style=" width: 17%; margin-left: -18px; color: grey;">
+        
+        <ion-select-option *ngFor="let item of chooseInfo.weatherList" [value]="item">{{item}}</ion-select-option>    
+      </ion-select>
+</div>
+<br>
+<br>
+<div id="fenlei">
+  <span >
+    <ion-icon slot="icon-only" name="grid" style="color: orange; font-size: 20px;"></ion-icon>分类：
+  </span>
+  <ion-select [(ngModel)]="chooseInfo.fenlei" style=" width: 22%; margin-left: -18px; color: grey;">
+    
+    <ion-select-option *ngFor="let item of chooseInfo.fenleiList" [value]="item">{{item}}</ion-select-option>    
+  </ion-select>
+</div>
+<br>
+<br>
+<div id="quanxian">
+  <span >
+    <ion-icon slot="icon-only" name="map" style="color: greenyellow; font-size: 20px;"></ion-icon>分类：
+  </span>
+  <ion-select [(ngModel)]="chooseInfo.quanxian" style=" width: 22%; margin-left: -18px; color: grey;">
+    
+    <ion-select-option *ngFor="let item of chooseInfo.quanxianList" [value]="item">{{item}}</ion-select-option>    
+  </ion-select>
+
+</div>
+
+
+
+</ion-content>

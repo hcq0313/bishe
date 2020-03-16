@@ -1,0 +1,13 @@
+ion-header{
+    ion-toolbar{
+      --background: url("../../assets/img/img13.jpg") center/ cover no-repeat;
+    }
+  }
+  ion-content {
+    // --background: honeydew;
+    --background: #f4f5f8;
+}
+ion-title{
+  font-family:"SimSun";
+  color: rgb(65, 63, 63);
+}
