@@ -23,23 +23,18 @@ export class Tab2Page {
 
   };
   constructor() {
-    // this.event = new EventEmitter();
   }
   ionViewDidEnter() {
     if (this.slide) {
-      // console.log('ionViewDidEnter');
-      // this.ngOnInit();
       this.slide.startAutoplay();
     }
   }
 
   ionViewDidLeave() {
-    // console.log('ionViewDidLeave');
     this.slide.stopAutoplay();
   }
 
   slideUpdate() {
     this.slide.startAutoplay();
-    // console.log('aaa');
   }
 }

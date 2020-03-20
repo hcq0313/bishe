@@ -105,4 +105,20 @@ router.post('/insert_comment', urlencodedParser, function (req, res) {  //post�
    res.send("1"); //返回的数据，这里根据情况写
     res.end();      
 });
+
+//删除我的日记
+router.post('/delete_mydairy', (req, res)=>{
+  console.log('req的数据：', req.body);
+  var num = req.body.num;
+  var username = req.body.username;
+  db.query("delete from diary1 where num= '" + num + "' and username= '" + username + "'", (err, data)=>{
+      if(err){
+        console.log(err);
+        res.status(500).send('database error').end(); 
+      }else{
+        console.log(data);
+        res.json(data);
+      }
+  });
+});
 module.exports = router;

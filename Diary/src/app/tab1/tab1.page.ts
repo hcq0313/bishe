@@ -8,7 +8,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { ModalController } from '@ionic/angular';
 // 引入addriji组件
 import { AddrijiComponent } from './components/addriji/addriji.component';
-
+// 引入手势事件
+import 'hammerjs';
+import { ToastController } from '@ionic/angular';
+import { ActionSheetController } from '@ionic/angular';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -27,9 +30,11 @@ public diaryList;
 public username;
 public username2;
 
+public num;
+
   constructor(public httpService: HttpserviceService, public http: HttpClient,
-              public modalController: ModalController,  public route: Router,
-              public activatedRoute: ActivatedRoute) {
+              public actionSheetController: ActionSheetController, public modalController: ModalController,  public route: Router,
+              public activatedRoute: ActivatedRoute, public toastController: ToastController) {
     this.nowDay = sd.format(new Date(), 'M');
     this.nowDay2 = sd.format(new Date(), 'D');
     this.nowDay3 = sd.format(new Date(), 'YYYY');
@@ -43,12 +48,10 @@ public username2;
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit(): void {
-    console.log('我执行完ngOnInit啦！');
     this.username = window.localStorage.getItem('username');
     this.getData();
   }
   getData() {
-    console.log('我执行了getdata');
     const api = 'http://localhost:3000/api/get_diary/';
     console.log('我要请求日记的作者是：', this.username);
     const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
@@ -56,7 +59,6 @@ public username2;
       console.log(response);
       this.diaryList = response;
     });
-    console.log('我执行完了post请求');
   }
   async showModel() {
     const modal = await this.modalController.create({
@@ -84,6 +86,56 @@ public username2;
   });
   }
 
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: '提示',
+      buttons: [{
+        text: '删除',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          console.log('Delete clicked');
+          const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+          const api = 'http://localhost:3000/api/delete_mydairy/';
+          this.http.post(api, { num: this.num, username: this.username
+          }, httpOptions).subscribe((response) => {
+            console.log(response);
+          });
+          this.presentToast();
+        }
+      }, {
+        text: '分享',
+        icon: 'share',
+        handler: () => {
+          console.log('Share clicked');
+        }
+      },
+      {
+        text: '取消',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: '删除成功.',
+      duration: 2000,
+      color: 'dark',
+      position: 'middle',
+      cssClass: 'mytoast'  // 必须写在全局
+    });
+    toast.present();
+  }
+  doPress(item) {
+    console.log(item);
+    this.num = item.num;
+    this.presentActionSheet();
+  }
 }
 
 

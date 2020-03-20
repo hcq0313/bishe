@@ -12,7 +12,7 @@
       </div>
 
       <!-- 日记主体部分 -->
-      <div *ngFor="let item of diaryList" id="diary" (click)="goXiangqing(item)">
+      <div *ngFor="let item of diaryList" id="diary" (click)="goXiangqing(item)" (press)="doPress(item)">
         <div id="diary_left">
           <p>{{item.day}}</p>
           <div id="spans">

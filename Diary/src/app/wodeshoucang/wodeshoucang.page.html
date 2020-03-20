@@ -3,10 +3,22 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
     </ion-buttons>
-    <ion-title>-STORY-</ion-title>
+    <ion-title >我的收藏</ion-title>
+   
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content >
+
+
+ <div id="div" class="ion-padding" *ngFor="let item of data" (click)="shanchu(item)">
+  <p id="time">{{item.year}}&nbsp;&nbsp;/&nbsp;&nbsp;{{item.mon}}&nbsp;&nbsp;/&nbsp;&nbsp;{{item.date}}</p>
+ 
+  <p id="xuhao">{{item.xuhao}}</p>
+  <ion-img src='{{item.img}}'></ion-img>
+  <p id="sheying">摄影|{{item.sheying}}</p>
+  <p id="sentence">{{item.sentence}}</p>
+</div>
+
 
 </ion-content>
