@@ -5,9 +5,15 @@ ion-header{
   }
   ion-content {
     // --background: honeydew;
-    --background: #f4f5f8;
+    // --background: #f4f5f8;
+    --background: url("../../assets/img/sg01.jpg") center/ cover no-repeat ;
+    
 }
 ion-title{
   font-family:"SimSun";
   color: rgb(65, 63, 63);
+}
+ion-button{
+  color: red;
+  font-size: large;
 }

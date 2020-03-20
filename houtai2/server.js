@@ -20,6 +20,11 @@ var get_user = require('./server/routers/get_user');
 var add_myziliao = require('./server/routers/add_myziliao');
 //意见
 var add_yijian = require('./server/routers/add_yijian');
+//编辑我的日记
+var bianji_riji = require('./server/routers/bianji_riji');
+//添加时光说
+var shiguangshuo = require('./server/routers/add_shiguangshuo');
+var shoucang = require('./server/routers/shoucang');
  //2、设置跨域访问
  app.all('*', function(req, res, next){
   res.header('Access-Control-Allow-Origin',  '*');
@@ -51,7 +56,9 @@ app.use('/api',get_wode);
 app.use('/api',get_user);
 app.use('/api',add_myziliao);
 app.use('/api',add_yijian);
-
+app.use('/api',bianji_riji);
+app.use('/api',shiguangshuo);
+app.use('/api',shoucang);
 
 app.post('/api',(req,res)=>{
   var str='';

@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [scrollY]="false">
+<ion-content>
 <div id="box">
   <div id="top">
 
@@ -32,22 +32,31 @@
     </span>
   </div>
   <br>
-  <div id="text2">
+  <div id="text2" style="height: 120px;">
     <p>{{text}}</p>
+  </div>
+  <p style=" text-align: center; color: brown;">--COMMENT--</p>
+  <div id="comm1" *ngFor="let item of comList">
+    <ion-avatar style="width: 40px; height: 40px; float: left; ">
+      <img src={{item.image}} alt="">
+    </ion-avatar>
+    <span id="name">{{item.nicheng}}</span>
+    <!-- <span id="lou">{{item.commentid}}楼</span> -->
+    <p id="pinglun">{{item.comtext}}</p>
   </div>
 </div>
 
-<div>
-  <ion-fab
-    vertical="top"
-    horizontal="end"
-    slot="fixed"
-    (click)="showModel()"
-    style="position: fixed;top:82%;left:77%;"
-  >
-    <ion-fab-button id="addbutton" size="small">
-      <ion-icon name="brush"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-</div>
+
 </ion-content>
+ <ion-footer style="background-color: rgb(226, 253, 240);">
+   <div id="foot">
+    <ion-input id="inp_foot" type="text" [(ngModel)]="pinglun">
+
+    </ion-input>
+    <ion-button id="btn_foot" (click)="onComment()" expand="block" >
+      添加
+    </ion-button>
+
+   </div>
+
+ </ion-footer>

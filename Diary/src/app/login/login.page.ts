@@ -63,8 +63,6 @@ onBlur1() {
   }
 
   onLogin() {
-    window.localStorage.setItem('username', this.username); // 保存登录时数据
-    window.localStorage.setItem('password', this.password); // 保存登录时数据
     console.log('username', this.username);
     console.log('password', this.password);
     if (this.password === undefined) {
@@ -82,6 +80,8 @@ onBlur1() {
             this.presentAlert4();
             console.log('密码错误！');
           } else {
+            window.localStorage.setItem('username', this.username); // 保存登录时数据
+            window.localStorage.setItem('password', this.password); // 保存登录时数据
             this.router.navigate(['/tabs/tab1'], {
               queryParams: {
                   username: this.username,

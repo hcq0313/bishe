@@ -16,6 +16,11 @@ export class Tab3Page {
   public diaryList;
   public myDiary;
   public numid;
+  public myShiguang;
+  public color;
+  // public diary2num;
+  public agree = 1;
+  public zan;
   constructor(public httpService: HttpserviceService, public http: HttpClient, public router: Router,
               public activatedRoute: ActivatedRoute) {
     this.username = window.localStorage.getItem('username');
@@ -52,6 +57,7 @@ export class Tab3Page {
     console.log(item.text);
     this.router.navigate(['wodexiangqing'], {
       queryParams: {
+        diary2num: item.diary2num,
         num: item.num,
         username: item.username,
         title: item.title,
@@ -69,6 +75,7 @@ export class Tab3Page {
     console.log(item.text);
     this.router.navigate(['zuixinxiangqing'], {
       queryParams: {
+        diary2num: item.diary2num,
         num: item.num,
         username: item.username,
         title: item.title,
@@ -81,5 +88,36 @@ export class Tab3Page {
         week: item.week
       }
   });
+  }
+  sglist() {
+    const api3 = 'http://localhost:3000/api/get_shiguang/';
+    const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    this.http.post(api3, {username: this.username}, httpOptions).subscribe((response) => {
+      console.log(response);
+      this.myShiguang = response;
+    });
+  }
+// 点赞
+  dianzan(item) {
+    window.event.stopPropagation();
+    if (item.color === 'red') {
+      item.zan = item.zan - 1;
+      item.color = 'grey';
+      // post提交赞数据
+      const api6 = 'http://localhost:3000/api/update_zan1/';
+      const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+      this.http.post(api6, {color: item.color, zan: item.zan, diary2num: item.diary2num}, httpOptions).subscribe((response) => {
+        console.log(response);
+      });
+    } else {
+      item.zan = item.zan + 1;
+      item.color = 'red';
+      // post提交赞数据
+      const api7 = 'http://localhost:3000/api/update_zan2/';
+      const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+      this.http.post(api7, {color: item.color, zan: item.zan, diary2num: item.diary2num}, httpOptions).subscribe((response) => {
+        console.log(response);
+      });
+    }
   }
 }

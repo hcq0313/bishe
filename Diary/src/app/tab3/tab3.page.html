@@ -5,8 +5,8 @@
         <ion-label>最新</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button value="tab2" (click)="hotlist()">
-        <ion-label>最热</ion-label>
+      <ion-segment-button value="tab2" (click)="sglist()">
+        <ion-label>时光说</ion-label>
       </ion-segment-button>
 
       <ion-segment-button value="tab3" (click)="mylist()">
@@ -30,12 +30,22 @@
           <p>{{item.text}}</p>
         </div>
         <div id="tubiao">
-          <ion-icon name="heart"></ion-icon>
+          
+          <ion-icon [ngStyle]="{'color': item.color}" name="heart" (click)="dianzan(item)"></ion-icon>
+          <span style="display: block; font-size: 14px; color: grey; width: 20px; float: right;">{{item.zan}}</span>
         </div>
       </div>
     </div>
     <div *ngSwitchCase="'tab2'" >
-     
+      <ion-card *ngFor="let item of myShiguang">
+        <ion-item id="shiguangshuo0">
+          <ion-label>A Card Of Future</ion-label>     
+        </ion-item>
+      
+        <ion-card-content style="color: rgb(70, 69, 69);">
+          {{item.shiguangshuo}}
+        </ion-card-content>
+      </ion-card>
     </div>
 
     <div *ngSwitchCase="'tab3'">
@@ -50,7 +60,7 @@
           <p>{{item.text}}</p>
         </div>
         <div id="tubiao">
-          <ion-icon name="heart"></ion-icon>
+          <ion-icon style="color: lightslategray;" name="heart"></ion-icon>
         </div>
       </div>
      

@@ -68,7 +68,7 @@ public username2;
   }
   goXiangqing(item) {
     console.log(item.text);
-    this.route.navigate(['zuixinxiangqing'], {
+    this.route.navigate(['yinsixiangqing'], {
       queryParams: {
         num: item.num,
         username: item.username,

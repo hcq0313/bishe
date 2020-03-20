@@ -54,6 +54,10 @@ const routes: Routes = [
     path: 'guanyuwomen',
     loadChildren: () => import('./guanyuwomen/guanyuwomen.module').then( m => m.GuanyuwomenPageModule)
   },
+  {
+    path: 'wodebianji',
+    loadChildren: () => import('./wodebianji/wodebianji.module').then( m => m.WodebianjiPageModule)
+  },
 
 ];
 @NgModule({

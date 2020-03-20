@@ -32,7 +32,7 @@ export class WodexiangqingPage implements OnInit {
       this.week = params.week;
       console.log('username:', this.username);
       console.log('title:', this.title);
-      console.log('text:', this.text);
+      console.log('num:', this.num);
       // console.log(params.data);
 
   });

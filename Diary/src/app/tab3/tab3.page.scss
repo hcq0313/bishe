@@ -37,18 +37,13 @@ ion-content {
     border-radius: 4px;
 }
 #tubiao{
-    width: 30px;
+    width: 41px;
     height: 20px;
     display: block;
-    // margin-bottom: -10px;
-    // background-color: blue;
     position: relative;
     float: right;
     font-size: 18px;
-    ion-icon{
-        color: lightslategray;
-    }
-
+    // margin-top: -25px;
 }
 #text{
     // background-color: chartreuse;
@@ -81,4 +76,7 @@ ion-content {
         font-size: 13px;
     }
 
+}
+#shiguangshuo0{
+    --background: url("../../assets/img/sen06.jpg") center/ cover no-repeat;
 }

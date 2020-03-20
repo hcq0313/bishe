@@ -19,12 +19,6 @@ router.post('/get_wode', (req, res)=>{
         res.json(data);
       }
     });
-
-  req.on('end', function () {
-    console.log('响应结束啦！');
-  })
-
- 
 });
 
 module.exports = router;

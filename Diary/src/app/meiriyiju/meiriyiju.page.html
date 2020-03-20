@@ -12,7 +12,9 @@
 
 
  <div id="div" class="ion-padding" *ngFor="let item of data">
+  <ion-icon id="star" name="star" (click)="shoucang(item)" [ngStyle]="{'color': item.color}"></ion-icon>
   <p id="time">{{item.year}}&nbsp;&nbsp;/&nbsp;&nbsp;{{item.mon}}&nbsp;&nbsp;/&nbsp;&nbsp;{{item.date}}</p>
+ 
   <p id="xuhao">{{item.xuhao}}</p>
   <ion-img src='{{item.img}}'></ion-img>
   <p id="sheying">摄影|{{item.sheying}}</p>
