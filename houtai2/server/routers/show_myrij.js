@@ -8,7 +8,7 @@ router.post('/get_wode', (req, res)=>{
   console.log('req的数据：', req.body);
   var username = req.body.username;
   // SELECT * FROM diary2 LEFT JOIN users ON diary2.username = users.username
-     db.query("select * from diary2,users where diary2.username=users.username and diary2.username = '" + username + "'", (err, data)=>{
+     db.query("select * from diary2,users where diary2.username=users.username and diary2.username = '" + username + "'order by diary2.diary2num desc", (err, data)=>{
       if(err){
         console.log(err);
         res.json(1);

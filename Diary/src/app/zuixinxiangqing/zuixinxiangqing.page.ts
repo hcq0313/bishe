@@ -61,6 +61,8 @@ export class ZuixinxiangqingPage implements OnInit {
     const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
     this.http.post(api2, {diary2num: this.diary2num, username: this.username, comtext: this.pinglun}, httpOptions).subscribe((response) => {
       console.log('提交评论：', response);
+      // location.replace('/zuixinxiangqing');
     });
+    this.pinglun = '';
   }
 }

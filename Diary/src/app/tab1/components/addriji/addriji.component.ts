@@ -26,13 +26,14 @@ public title;
 
 public username;
 
+public color = 'grey';
 public chooseInfo: any = {
   weatherList: ['阴', '晴', '雨', '雪', '雾', '多云'],
   weather: '晴',
   fenleiList: ['日常', '旅行', '随笔', '心情', '其他'],
   fenlei: ['日常'],
   quanxianList: ['隐私', '公开'],
-  quanxian: ['隐私']
+  quanxian: ['公开']
 };
 
 public gongkai = true;
@@ -55,11 +56,9 @@ public gongkai = true;
 
   doClose() {
     this.navParams.data.modal.dismiss();
-    // location.reload();
   }
   doClose2() {
     this.navParams.data.modal.dismiss();
-    // location.reload();
   }
 
 // 获取当前时间 判断是星期几
@@ -105,8 +104,8 @@ public gongkai = true;
         // console.log('kkkkk');
         this.presentAlert2();
       } else {
-
-        if (this.chooseInfo.quanxian[0] === '隐私' ) {
+        console.log('this.chooseInfo.quanxian:', this.chooseInfo.quanxian);
+        if (this.chooseInfo.quanxian === '隐私' ) {
           console.log('日记权限是隐私啊！！');
           const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
           const api = 'http://localhost:3000/api/add_riji/';
@@ -117,23 +116,21 @@ public gongkai = true;
             console.log(response);
             this.doClose2();
           });
+          location.replace('/tabs/tab1');
         } else {
+          console.log('this.chooseInfo.quanxian:', this.chooseInfo.quanxian);
           console.log('日记权限是公开呀！！');
           const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
           const api = 'http://localhost:3000/api/add_riji2/';
           this.http.post(api, {username: this.username, title: this.title, text: this.text,
             weather: this.chooseInfo.weather, fenlei: this.chooseInfo.fenlei, quanxian: this.chooseInfo.quanxian,
-            week: this.week, month: this.month, day: this.day
+            week: this.week, month: this.month, day: this.day, color: this.color
           }, httpOptions).subscribe((response) => {
             console.log(response);
             this.doClose2();
           });
+          location.replace('/tabs/tab3');
         }
-
-
-
       }
     }
-
-
 }

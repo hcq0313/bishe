@@ -102,6 +102,7 @@ public num;
             console.log(response);
           });
           this.presentToast();
+          location.replace('/tabs/tab1');
         }
       }, {
         text: '分享',

@@ -43,6 +43,7 @@ public id;
             console.log(response);
           });
           this.presentToast();
+          location.replace('/wodeshoucang');
         }
       }, {
         text: '分享',

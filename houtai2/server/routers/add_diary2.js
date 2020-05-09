@@ -7,11 +7,11 @@ let db = require('../connection');
 //创建编码解析
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 //数据库连接方法
-function fun_add_user(username,title,text,weather,fenlei,quanxian,week,month,day) {
+function fun_add_user(username,title,text,weather,fenlei,quanxian,week,month,day,color) {
 
    //插入数据
-   var addSql = "insert into diary2(username,title,text,weather,fenlei,quanxian,week,month,day) values(?,?,?,?,?,?,?,?,?)"; //存放数据库语言的，这里是添加
-   var addParmas = [username,title,text,weather,fenlei,quanxian,week,month,day];
+   var addSql = "insert into diary2(username,title,text,weather,fenlei,quanxian,week,month,day,color) values(?,?,?,?,?,?,?,?,?,?)"; //存放数据库语言的，这里是添加
+   var addParmas = [username,title,text,weather,fenlei,quanxian,week,month,day,color];
    db.query(addSql, addParmas, function(err, res) {
          if(err) {
                console.log("[insert error]-", err.message);
@@ -24,23 +24,9 @@ function fun_add_user(username,title,text,weather,fenlei,quanxian,week,month,day
    });
 }
 router.post('/add_riji2', urlencodedParser, function (req, res) {  //post处理方法
-
-   // 输出 JSON 格式
-   var response = {
-         "username":req.body.username, 
-         "title":req.body.title,   //得到页面提交的数据
-          "text":req.body.text,
-          "weather":req.body.weather,
-          "fenlei":req.body.fenlei,
-          "quanxian":req.body.quanxian,
-          "week":req.body.week,
-          "month":req.body.month,
-          "day":req.body.day,
-    };
    //加入数据库
    fun_add_user(req.body.username,req.body.title,req.body.text,req.body.weather,
-                req.body.fenlei,req.body.quanxian,req.body.week,req.body.month,req.body.day);  //数据库方法，加入了两个参数，是提交的数据
-    console.log(response);
+                req.body.fenlei,req.body.quanxian,req.body.week,req.body.month,req.body.day,req.body.color);  //数据库方法，加入了两个参数，是提交的数据
    res.send("1"); //返回的数据，这里根据情况写
     res.end();      
 });

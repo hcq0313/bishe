@@ -57,11 +57,8 @@ export class Tab4Page implements OnInit {
             handler: () => {
               window.localStorage.removeItem('username');
               window.localStorage.removeItem('password');
-              this.router.navigate(['/login'], {
-                queryParams: {
-                    username: this.username,
-                }
-            });
+              this.router.navigate(['/login'], {});
+              location.replace('/login');
             }
           }
         ]
@@ -70,12 +67,6 @@ export class Tab4Page implements OnInit {
     }
   loginOut() {
     this.presentAlertMultipleButtons();
-
-  //   this.router.navigate(['/login'], {
-  //     queryParams: {
-  //         username: this.username,
-  //     }
-  // });
   }
 
 }

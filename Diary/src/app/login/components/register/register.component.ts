@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, NavParams } from '@ionic/angular';
 // httpclient和httpheaders用于post提交数据
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -14,7 +15,8 @@ export class RegisterComponent implements OnInit {
   public password2 = '';
   public nicheng = '';
 
-  constructor(public alertController: AlertController, public navParams: NavParams, public http: HttpClient) {}
+  constructor(public alertController: AlertController, public navParams: NavParams,
+              public http: HttpClient, public toastController: ToastController) {}
   // 手机号弹框
   async presentAlert() {
     const alert = await this.alertController.create({
@@ -87,9 +89,20 @@ export class RegisterComponent implements OnInit {
         }
       }
     }
+    this.presentToast();
   }
 // 关掉模态窗口
   onClose() {
     this.navParams.data.modal.dismiss();
+  }
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: '注册成功.',
+      duration: 1000,
+      color: 'dark',
+      position: 'middle',
+      cssClass: 'mytoast'  // 必须写在全局
+    });
+    toast.present();
   }
 }
